@@ -8,13 +8,13 @@ module Github
                    headers: {"User-Agent" => "Mule-Deer-App"})
     end
 
-    def gist
+    def gist(description, content, filename="file1.txt")
       options = {
-        description: "the description for this gist",
+        description: description,
         public: true,
         files: {
-          "file1.txt" => {
-            content: "String file contents"
+          filename => {
+            content: content
           }
         }
       }

@@ -8,6 +8,6 @@ get '/' do
 end
 
 post '/gists' do
-  @gist = Github::Client.new.gist
+  @gist = Github::Client.new.gist("MULE DEER YEAH", "This is the content.")
   @gist["html_url"]
 end
