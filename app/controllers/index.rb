@@ -3,11 +3,6 @@ require 'httparty'
 require 'json'
 
 get '/' do
-  @emojis = Github::Client.new.emojis
-  erb :index
+  @emoji_response = HTTParty.get("https://api.github.com/emojis")
 end
 
-post '/gists' do
-  @gist = Github::Client.new.gist("MULE DEER YEAH", "This is the content.")
-  @gist["html_url"]
-end
